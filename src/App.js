@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -36,35 +36,44 @@ function App() {
     fetchDatad();
     }
 
-  function ot(){
-    if(document.getElementById("cat") === "Cats !"){
-      document.getElementById("full").innerHTML = <div>
-      <h1 id='cat' className="display-1">Cats!</h1>
-      <div className='display-4'>{quote}</div>
-      <button class="btn btn-outline-secondary" onClick={getquote} >New fact!</button>
-      </div>
-    }else(
-      <div>
-           <h1 class="display-1">Dogs!</h1>
-            <div className='display-4'>{quoted}</div>
-            <button class="btn btn-outline-secondary" onClick={getquoted}>New fact!</button>
-          </div>
-    )
-      
-  }
+    function myFunction() {
+      var x = document.getElementById("cats");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
 
+    function myFunctiond() {
+      var x = document.getElementById("dogs");
+
+        if (x.style.display === "none") {
+        x.style.display = "block";
+
+      } else{
+        x.style.display = "none";
+      } 
+    }
+
+
+      
   return (
     <div className='App' id='full'>
-          <div className='u'>
-            <h1  id='cat' className="display-1"><b>Cats!</b></h1>
+          <div id='cats' className='u'>
+            <h1 className="display-1"><b>Cats!</b></h1>
             <div className='display-4'>{quote}</div>
             <button class="btn btn-outline-secondary" onClick={getquote} >New fact!</button>
+            <button class="btn btn-outline-secondary" onClick={() => {myFunction()}} >Hide</button>
           </div>
+
           <div class="vr"></div>
-          <div className='w'>
-           <h1  class="display-1"><b>Dogs!</b></h1>
-            <div className='display-4'>{quoted}</div>
-            <button class="btn btn-outline-secondary" onClick={getquoted} >New fact!</button>
+
+          <div id='dogs' className='w'>
+            <h1  className="display-1 "><b>Dogs!</b></h1>
+            <div className='display-4 '>{quoted}</div>
+            <button className="btn btn-outline-secondary " onClick={getquoted} >New fact!</button>
+            <button className="btn btn-outline-secondary" onClick={() => {myFunctiond()}} >Hide</button>
           </div>
             
     </div>
