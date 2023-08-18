@@ -2,6 +2,7 @@
   text-align: center;
   display: flex;
   justify-content: space-around;
+  margin-top: 30px;
 }
 
 .App-logo {
@@ -43,9 +44,7 @@
   height: 500px;
   border: #61dafb;
 }
-.vr{
-  height: 100vh;
-}
+
 .btn{
   margin-top: 30px;
 }
@@ -54,4 +53,8 @@
 }
 .w{
   margin-left: 10px;
+}
+
+.btn{
+  margin-bottom: 60px;
 }
